@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+/*
+Author: KaspeDKK
+
+Filename: Index.html
+Date of creation: 10-11-2021
+Github: KaspeDKK
+*/
+
+#wrapper {
+	background-color: rgba(64, 64, 64, 1);
+	width: 1024px;
+	min-height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header {
+	background-color: rgba(161, 161, 161, 1);
+	width: 1024px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+aside{
+	background-color: rgba(161, 161, 161, 1);
+	width: 200px;
+	height: 600px;
+	margin: 10px;
+	float: left;
+	
+}
+
+#contentTop {
+	background-color: rgba(161, 161, 161, 1);
+	width: 700px;
+	height: 290px;
+	margin: 10px;
+	float: left;
+}
+
+#contentBottom {
+	background-color: rgba(161, 161, 161, 1);
+	width: 700px;
+	height: 290px;
+	margin: 10px;
+	float: left;
+}
+
+.sidebar {
+	font-size: 125%;
+}

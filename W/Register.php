@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>HTML struktur</title>
+	<title>Limbo</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	<link rel="icon" href="img/LIMBOicon.png">
 </head>

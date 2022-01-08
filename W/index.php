@@ -2,9 +2,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>HTML struktur</title>
+		<title>Limbo</title>
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link rel="icon" href="img/LIMBOicon.png">
+
 		<script> src="js/nav.js" </script>
 	</head>
 	<body>
@@ -33,10 +34,10 @@
 				Web Sidebar
 				<p class="names">Hans Jensen</p>
 
-			</aside>	
+			</aside>
 
 			-->
-			
+
 			<div id="content">
 
 				<h3> Access Account </h3>
@@ -62,14 +63,14 @@
 							<tr>
 								<td>
 									<input type="submit" name="Login"
-									value="Login">	
+									value="Login">
 								</td>
 							</tr>
-						</table>	
+						</table>
 
 						<hr style="width:15%;text-align:left;margin-left:0">
 
-					</form>		
+					</form>
 
 
 
@@ -81,23 +82,12 @@
 
 							<tr>
 								<td>
-									<input type="submit" value="Register">	
+									<input type="submit" value="Register">
 								</td>
 							</tr>
 
 						</table>
 					</form>
 				</section>
-			</div>
-
-			<!--
-			<footer>
-
-				Web Footer
-
-			</footer>
-			-->
-
-		</div>
 	</body>
 </html>

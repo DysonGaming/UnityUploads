@@ -1,0 +1,639 @@
+@CHARSET "UTF-8";
+/*
+Author: KaspeDKK
+
+Filename: Index.html
+Date of creation: 10-11-2021
+Github: KaspeDKK
+*/
+
+#wrapper {
+	background-color: rgba(64, 64, 64, 1);
+	width: 1024px;
+	min-height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header {
+	background-color: rgba(161, 161, 161, 1);
+	width: 1024px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+aside{
+	background-color: rgba(161, 161, 161, 1);
+	width: 200px;
+	height: 600px;
+	margin: 10px;
+	float: left;
+	
+}
+
+#contentTop {
+	background-color: rgba(161, 161, 161, 1);
+	width: 700px;
+	height: 290px;
+	margin: 10px;
+	float: left;
+}
+
+#contentBottom {
+	background-color: rgba(161, 161, 161, 1);
+	width: 700px;
+	height: 290px;
+	margin: 10px;
+	float: left;
+}
+
+.sidebar {
+	font-size: 125%;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Limbo</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" href="img/LIMBOicon.png">
+</head>
+
+    <header>
+
+	<div id="logo">
+	<img src="img/LIMBOsmallLogo.jpg" alt="LogoSS" width="100" height="100">
+	<img src="img/LIMBOfullLogo.jpg" alt="LogoSS" width="250" height="100">
+
+	</header>
+
+    <body>
+
+        <h3>Register Account</h3>
+
+        <section class="register-form">
+            <form action="includes/register.inc.php" method="post">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="uid"
+                            placeholder="Username">
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="Password" name="pwd"
+                            placeholder="Password">
+                        </td>
+
+                    </tr>
+
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+
+                    <tr>
+
+                        <td>
+                            <input type="email" name="email"
+                            placeholder="E-mail Adress">
+                        </td>
+
+                    </tr>
+
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+
+                    <tr>
+                        <td>
+                            <input type="submit" name="submit"
+                            value="Create account">	
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+        </section>
+    </body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Limbo</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link rel="icon" href="img/LIMBOicon.png">
+
+		<script> src="js/nav.js" </script>
+	</head>
+	<body>
+		<div id="wrapper">
+
+			<header>
+
+			<div id="logo">
+			<img src="img/LIMBOsmallLogo.jpg" alt="LogoSS" width="100" height="100">
+			<img src="img/LIMBOfullLogo.jpg" alt="LogoSS" width="250" height="100">
+
+			<!--
+			</div>
+				Web Header
+				<p class="names">Jens Hansen</p>
+			-->
+
+			</header>
+
+
+
+			<!--
+
+			<aside>
+
+				Web Sidebar
+				<p class="names">Hans Jensen</p>
+
+			</aside>
+
+			-->
+
+			<div id="content">
+
+				<h3> Access Account </h3>
+
+				<section class="login/register-form">
+					<form action="includes/login.inc.php" method="post">
+
+						<table>
+							<tr>
+								<td>
+									<input type="text" name="uid"
+									placeholder="Username">
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<input type="password" name="pwd"
+									placeholder="Password">
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<input type="submit" name="Login"
+									value="Login">
+								</td>
+							</tr>
+						</table>
+
+						<hr style="width:15%;text-align:left;margin-left:0">
+
+					</form>
+
+
+
+
+
+					<form action="Register.php?error=none" method="post">
+
+						<table>
+
+							<tr>
+								<td>
+									<input type="submit" value="Register">
+								</td>
+							</tr>
+
+						</table>
+					</form>
+				</section>
+	</body>
+</html>
+<?php
+    session_start();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Limbo</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" href="img/LIMBOicon.png">
+    <script type="text/javascript" src="js/jul.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+    <header>
+
+        <div id="logo">
+        <img src="img/LIMBOsmallLogo.jpg" alt="LogoSS" width="100" height="100">
+        <img src="img/LIMBOfullLogo.jpg" alt="LogoSS" width="250" height="100">
+
+        <canvas id="myCanvas" width="1022" height="100" style="border:1px solid #000000;">
+		</canvas>
+
+	</header>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <body>
+    <div id="wrapper">
+
+        <aside>
+            <p style="font-weight:bold;" class="sidebar">Other Profiles:</p>
+
+                <a class="sidebar"  href="">Luke Skywalker</a>
+                <br>
+                <a class="sidebar"  href="">Tony Stark</a>
+                <br>
+                <a class="sidebar"  href="">Peter Parker</a>
+                <br>
+                <a class="sidebar"  href="">Bruce Wayne</a>
+                <br>
+                <a class="sidebar"  href="">Clint Barton</a>
+                <br>
+                <a class="sidebar"  href="">Jack Sparrow</a>
+                <br>
+        </aside>
+
+        <div id="contentTop">
+
+            <?php
+            if (isset($_SESSION["useruid"])) {
+                echo "<p>Hello " . $_SESSION["useruid"] . "</p>";
+                echo "<a href='includes/logout.inc.php'>Log Out</a>";
+            }
+            else {
+                echo "<p>You need an account to view this content! Make one here:</p><a href='Register.php'>Register</a>";
+            }
+        ?>
+
+        <div id="like_button_container"></div>
+
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+            <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+            <script src="js/like_button.js"></script>
+
+        </div>
+
+	    <div id="contentBottom">
+			Indhold2
+
+			<button id="ButtonStop" type="button">Stop All animations</button>
+			<button id="ButtonStart" type="button">Start All animations</button>
+			<button id="ButtonReset" type="button">Reset animations</button>
+            
+		</div>
+
+		<footer>
+		</footer>
+
+    </div>
+    </body>
+
+</html>
+window.onload=function(){
+	// Declaration of Vars
+	
+	function animate(){
+		// Func
+	}
+animate();
+};
+'use strict';
+
+const e = React.createElement;
+
+class LikeButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { liked: false };
+  }
+
+  render() {
+    if (this.state.liked) {
+      return 'You liked this.';
+    }
+
+    return e(
+      'button',
+      { onClick: () => this.setState({ liked: true }) },
+      'Like'
+    );
+  }
+}
+
+const domContainer = document.querySelector('#like_button_container');
+ReactDOM.render(e(LikeButton), domContainer);
+window.onload=function() {
+
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+  var counter = -322;
+  var counterTuborg = counter + 300; // -122
+  var counterDIR = 1;
+  var counterDIRTuborg = 1;
+  var running = true;
+  var visible = false;
+
+  var button = document.getElementById('ButtonStop');
+  var button2 = document.getElementById('ButtonStart');
+  var buttonreset = document.getElementById('ButtonReset');
+
+    button.onclick = function(){
+
+      running = false;
+
+    };
+
+    button2.onclick = function(){
+
+      running = true;
+
+    };
+
+    buttonreset.onclick = function(){
+      running = true;
+      visible = false;
+      counter = -322;
+      counterTuborg = counter + 300; // -122
+      counterDIR = 1;
+      counterDIRTuborg = 1;
+    };
+
+    var julemand = new Image();
+    julemand.src="./img/Julemand.png";
+
+    var julemand2 = new Image();
+    julemand2.src="./img/Julemand2.png";
+
+    var tuborg1 = new Image();
+    tuborg1.src="./img/tuborg1.png";
+
+    var tuborg2 = new Image();
+    tuborg2.src="./img/tuborg2.png";
+
+  function animate(){
+    if (running) {
+      counter = counter + counterDIR;
+      counterTuborg = counterTuborg + counterDIRTuborg;
+    };
+
+    // Draw figure
+
+    context.clearRect(0,0,1022,100);
+    //context.fillRect(counter,40,100,100);
+    if (counterDIR!=1) {
+      context.drawImage(julemand2,counter,0);
+    } else {
+      context.drawImage(julemand,counter,0);
+    }
+
+    if (counterDIRTuborg !=1 && visible) {
+      context.drawImage(tuborg2,counterTuborg,0);
+    } else if (visible) {
+      context.drawImage(tuborg1,counterTuborg,0);
+    };
+
+    // initiate and restart
+
+    setTimeout(animate,10);
+
+    if (counter == 1032) {
+      counterDIR = -1;
+    };
+
+    if (counter == -222) {
+      counterDIR = 1;
+    };
+
+    if (counterTuborg == 1032) {
+      counterDIRTuborg = -1;
+      visible = true;
+    };
+
+    if (counterTuborg == -222) {
+      counterDIRTuborg = 1;
+    };
+
+  };
+  animate();
+};
+<?php
+
+if (isset($_POST["submit"])) {
+
+    $email = $_POST["email"];
+    $username = $_POST["uid"];
+    $pwd = $_POST["pwd"];
+
+    require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
+
+    // Checking for user mistakes in register (i.e Errorhandling)
+    if (emptyInputCheck($email, $username, $pwd) !== false) {
+        header("location: ../register.php?error=emptyInput");
+        exit();
+    }
+
+    if (invalidUID($username) !== false) {
+        header("location: ../register.php?error=invalidUID");
+        exit();
+    }
+
+    if (invalidEmail($email) !== false) {
+        header("location: ../register.php?error=invalidEmail");
+        exit();
+    }
+
+    if (uidExists($conn, $username, $email) !== false) {
+        header("location: ../register.php?error=usernameTaken");
+        exit();
+    }
+
+    createUser($conn, $email, $username, $pwd);
+}
+else {
+    header("location: ../register.php");
+    exit();
+}
+<?php
+
+session_start();
+session_unset();
+session_destroy();
+
+header("location: ../index.php");
+exit();
+<?php
+
+if (isset($_POST["Login"])) {
+
+    $username = $_POST["uid"];
+    $pwd = $_POST["pwd"];
+
+    require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
+
+    if (emptyInputLogin($username, $pwd) !== false) {
+        header("location: ../index.php?error=emptyInput");
+        exit();
+    }
+    loginUser($conn, $username, $pwd);
+} 
+else {
+    header("location: ../index.php");
+    exit();
+}
+<?php
+
+// Check if the user did NOT type anything in any of the boxes
+function emptyInputCheck($email, $username, $pwd) {
+    $result;
+    if (empty($email) || empty($username) || empty($pwd)) {
+
+        $result = true;
+    } 
+    else {
+
+        $result = false;
+    }
+
+    return $result;
+}
+// check if uid is following the preset rules from the search algorithm below
+function invalidUID($username) {
+    $result;
+    if (!preg_match("/^[a-zA-Z0-9\s]*$/", $username)) {
+
+        $result = true;
+    }
+    else {
+
+        $result = false;
+    }
+
+    return $result;
+}
+// Checks if email is valid
+function invalidEmail($email) {
+    $result;
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+        $result = true;
+    }
+    else {
+
+        $result = false;
+    }
+
+    return $result;
+}
+// Check if users input for username OR email already exists on the DB + some antiscumbag checks
+function uidExists($conn, $username, $email) {
+    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../register.php?error=stmtfailure");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($resultData)) {
+        return $row;
+    }
+    else {
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+// make new account
+function createUser($conn, $email, $username, $pwd) {
+    $sql = "INSERT INTO users (usersEmail, usersUid, usersPwd) VALUES (?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../register.php?error=stmtfailure");
+        exit();
+    }
+
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "sss", $email, $username, $hashedPwd);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../index.php?error=none");
+    exit();
+
+}
+
+// Check if the user did NOT type anything in any of the boxes (LOGIN VERSION)
+function emptyInputLogin($username, $pwd) {
+    $result;
+    if (empty($username) || empty($pwd)) {
+
+        $result = true;
+    } 
+    else {
+
+        $result = false;
+    }
+
+    return $result;
+}
+
+// Login to account
+function loginUser($conn, $username, $pwd) {
+    $uidExists = uidExists($conn, $username, $email);
+
+    if ($uidExists === false) {
+        header("location: ../index.php?error=WrongPwdOrUid");
+        exit();
+    }
+
+    $pwdHashed = $uidExists["usersPwd"];
+    $checkPwd = password_verify($pwd, $pwdHashed);
+    if ($checkPwd === false) {
+        header("location: ../index.php?error=WrongPwdOrUid");
+        exit();
+    }
+    else if ($checkPwd === true) {
+        session_start();
+        $_SESSION["userid"] = $uidExists["usersid"];
+        $_SESSION["useruid"] = $uidExists["usersUid"];
+        header("location: ../FrontPage.php");
+        exit();
+    }
+}
+<?php
+
+$serverName = "localhost";
+$dBUsername = "root";
+$dBPassword = "";
+$dBname = "limbo";
+
+$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBname);
+
+if (!$conn) {
+    die("Connection failed:" . mysqli_connect_error());
+}

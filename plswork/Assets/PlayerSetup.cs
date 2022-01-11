@@ -21,16 +21,21 @@ public class PlayerSetup : MonoBehaviour
     int tick = 0;
     float OldTime;
 
+    // change this value to get desired smoothness
+    public float SmoothTime = 0.01f;
+    // This value will change at the runtime depending on target movement. Initialize with zero vector.
+    private Vector3 velocity = Vector3.zero;
+
     // Start is called before the first frame update
     void Start()
     {
         PlayerRb = GetComponent<Rigidbody>();
         tick = 0;
+
     }
 
-
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (Input.GetAxis("Horizontal") != 0 ) {
@@ -61,31 +66,31 @@ public class PlayerSetup : MonoBehaviour
         switch(tick)
         {
             case 1:
-                PlayerFowardSpeed = 40f;
+                PlayerFowardSpeed = 35f;
                 break;
 
             case 2:
-                PlayerFowardSpeed = 60f;
+                PlayerFowardSpeed = 45f;
                 break;
 
             case 3:
-                PlayerFowardSpeed = 80f;
+                PlayerFowardSpeed = 65f;
                 break;
 
             case 4:
-                PlayerFowardSpeed = 100f;
+                PlayerFowardSpeed = 75f;
                 break;
 
             case 5:
-                PlayerFowardSpeed = 120f;
+                PlayerFowardSpeed = 125f;
                 break;
 
             case 6:
-                PlayerFowardSpeed = 140f;
+                PlayerFowardSpeed = 175f;
                 break;
 
             case 7: // Super speed
-                PlayerFowardSpeed = 180f;
+                PlayerFowardSpeed = 250f;
                 break;
         }
 
@@ -95,9 +100,6 @@ public class PlayerSetup : MonoBehaviour
         if (playerAlive) {
             // Player move 
             PlayerRb.AddForce(0, 0, PlayerFowardSpeed * Time.deltaTime, ForceMode.VelocityChange);
-
-            // Attach Cam
-            playerPos.position = transform.position + offset;
             
             // extra gravity
             if (IsGrounded == false)
@@ -105,9 +107,10 @@ public class PlayerSetup : MonoBehaviour
                 transform.position = transform.position + new Vector3(0, -2 * Time.deltaTime, 0);
             }
 
+            // update position
+            Vector3 targetPosition = transform.position + offset;
+            playerPos.position = Vector3.SmoothDamp(playerPos.position, targetPosition, ref velocity, SmoothTime);
         }
-
-    
     }
 
     void OnCollisionEnter(Collision collisionInfo)

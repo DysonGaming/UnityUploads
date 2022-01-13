@@ -1,8 +1,13 @@
-print("Hello World. You must write something")
-b1 = input("")
-var1 = " Hey "
-number = 0
-number += 10
+def rev(z):
+    navn = ""
+    for i in range(len(z)-1, -1, -1):
+        navn = navn + z[i]
+    return navn
 
-if ((((b1==b1)))):
-    (print((b1 + var1) + ("Friend Nr. " + str(number))))
+print("indtast et ord ")
+z=input("")
+
+if z == rev(z):
+    print(z + " ER et palindrom")
+else: 
+    print(z + " er IKKE et palindrom")

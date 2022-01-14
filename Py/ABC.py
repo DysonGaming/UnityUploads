@@ -1,4 +1,14 @@
 import random
+import string
+alphabet_string1 = string.ascii_lowercase
+alphabet_list1 = list(alphabet_string1)
+
+alphabet_string = string.ascii_uppercase
+alphabet_list = list(alphabet_string)
+alphabet_list.append(alphabet_list1)
+
+
+
 alfabetetStandard = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 alfabetet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 listOfCombos = []

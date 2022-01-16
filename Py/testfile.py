@@ -17,7 +17,7 @@ def cryLetter(b,i):
     # incrypt
     if pLower + i >= 26:
         pLower = pLower - 26
-    return alphabet_listLOWER[pLower + i]    
+    return alphabet_listLOWER[pLower + i]
 
 
 print(len(alphabet_listUPPER))

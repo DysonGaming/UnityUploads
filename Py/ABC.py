@@ -1,31 +1,25 @@
-import random
-import string
-alphabet_string1 = string.ascii_lowercase
-alphabet_list1 = list(alphabet_string1)
-
-alphabet_string = string.ascii_uppercase
-alphabet_list = list(alphabet_string)
-alphabet_list.append(alphabet_list1)
-
-
-
-alfabetetStandard = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 alfabetet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-listOfCombos = []
-for i in range(1, 6):
-    comboNum = i
-    random.shuffle(alfabetet)
-    listOfCombos.append(alfabetet)
 
-keyinc = 8
-keydec = -8
+keyinc = 3
+keydec = -3
+iselect = 1
 
 # Hvis man er i slutningen af alfabet, skal man starte ved A
 def cryLetter(b,i):
+
     p = alfabetet.index(b)
-    # incrypt
+    # check
     if p + i >= 26:
         p = p - 26
+
+    Alpha2 = alfabetet[0::3] # ['A', 'D', 'G', 'J', 'M', 'P', 'S', 'V', 'Y']
+
+    if b in Alpha2:
+        iselect += 1
+        print(iselect)
+
+    else: print("error occured")
+
     return alfabetet[p + i]
     
 # selve inkrypteringen
@@ -49,7 +43,7 @@ def start():
 start()
 
 # Decrypter den modtagede besked HVIS bruger skriver YES
-print('To decrypt: Type YES')
+print('decrypt a message?: Type YES / NO')
 Check = input("")
 if "YES" in Check:
     print('Type your encrypted message')
@@ -62,6 +56,5 @@ elif "NO" in Check:
 else:
     print('You have typed an ivalid command. Try again.')
     start()
-
-
 # 26 pr 26 pr 26 + ombytning
+

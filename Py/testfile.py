@@ -29,4 +29,3 @@ if str.isupper(msg):
 else:
     print("Lower")
 
-

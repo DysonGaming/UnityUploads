@@ -22,28 +22,30 @@ def cryLetter(b,i,mode):
     Alpha2= alphabet[1::2] # ['B', 'D', 'F', 'H', 'J', 'L', 'N', 'P', 'R', 'T', 'V', 'X', 'Z']
 
     if b in Alpha1:
+
+        # Bestem 1. nøgle og sæt dekrypteringsnøgle
+        i = 9
+        if mode == 1:
+            i = -i
+        AlphaFinal = Alpha1
+
         # Tjek hvis kryptering overgår alfabetsum, og sæt tilbage hvis det gør
         p = Alpha1.index(b)
         if p + i >= 13:
             p = p - 13
 
-        # Bestem 1. nøgle og sæt dekrypteringsnøgle
-        i = 3
+    elif b in Alpha2:
+
+        # Bestem 2. nøgle og sæt dekrypteringsnøgle
+        i = 7
         if mode == 1:
             i = -i
-        AlphaFinal = Alpha1
+        AlphaFinal = Alpha2
 
-    elif b in Alpha2:
         # Tjek hvis kryptering overgår alfabetsum, og sæt tilbage hvis det gør
         p = Alpha2.index(b)
         if p + i >= 13:
             p = p - 13
-
-        # Bestem 2. nøgle og sæt dekrypteringsnøgle
-        i = 5
-        if mode == 1:
-            i = -i
-        AlphaFinal = Alpha2
 
     else:
         print("error occured")
@@ -64,13 +66,29 @@ def encrypt(i, txt,mode):
     return crymsg
 
 # Sender den inkrypterede besked og gemmer den i en variabel.
-def start():
+def startProcess():
 
     print('Type your pre-encryption message')
     msg = input("")
     msg = msg.upper()
     mode = 0
-    print(encrypt(i,msg,mode))
+    print("Encrypted message: "+encrypt(i,msg,mode))
+
+
+""" MENU - Bruger sektion """
+
+# START
+def start():
+    print('Hello User. Encrypt new message?: Type YES / NO ')
+    Check = input("")
+    if "YES" in Check:
+        startProcess()
+    elif "NO" in Check:
+        print('exiting application...')
+        exit() 
+    else:
+        print('You have typed an ivalid command. Script restarting.')
+        startProcess()
 start()
 
 # Decrypter den modtagede besked HVIS bruger skriver YES
@@ -81,9 +99,9 @@ if "YES" in Check:
     msgdec = input("")
     msgdec = msgdec.upper()
     mode = 1
-    print(encrypt(i,msgdec,mode))
+    print("Decrytped message: "+encrypt(i,msgdec,mode))
+    start()
 elif "NO" in Check:
-    print('You have chosen NOT to decrypt...')
     start()
 else:
     print('You have typed an ivalid command. Try again.')

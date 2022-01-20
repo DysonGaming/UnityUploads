@@ -29,3 +29,10 @@ if str.isupper(msg):
 else:
     print("Lower")
 
+import string
+alphabet_string1 = string.ascii_lowercase
+alphabet_list1 = list(alphabet_string1)
+
+alphabet_string = string.ascii_uppercase
+alphabet_list = list(alphabet_string)
+alphabet_list.append(alphabet_list1)

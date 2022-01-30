@@ -5,12 +5,13 @@ Github: KaspeDKK
 filename: chiGame.py
 
 description:
-    13 karameller & 1 chilli
+    13 its & 1 chilli
 
-    Den der har chillien taber
+    The loser is the one that ends up with the chilli
 
-    man kan tage 1, 2 elelr 3 af gangen
+    You can take 1, 2 or 3 items each turn
 
+    "AI" Algorithm:
     Round1 = AI takes 1
     Round2 = Player takes 1,2,3 and AI takes Remainders
     Round3 = Player takes 1,2,3 and AI takes Remainders
@@ -25,6 +26,9 @@ description:
 options = [1,2,3]
 choice = 0
 basket = 12 # with the pre-deducted value from the AI's first move'
+
+def Break():
+    print("") # empty line
 
 # Script for the game
 def Start(choice,basket):
@@ -42,7 +46,9 @@ def Start(choice,basket):
             # respond to user (print)
             remainder = str(int(basket)-int(choice))
             basket = int(remainder)
-            print("You have chosen to take " + choice + " from the basket. There are now " + remainder + "items left")
+            Break()
+            print("You have chosen to take " + choice + " from the basket. There are now " + remainder + " items left")
+            Break()
         else:
             print("Number is NOT allowed") 
 
@@ -52,31 +58,54 @@ def Start(choice,basket):
             # AI turn
             Aiturn = 4 - int(choice)
             basket = basket - Aiturn
+            print("The AI has taken "+ str(Aiturn) + " from the basket. There are now " + str(basket) + " items left")
+            Break()
 
 #----------#
 #   MENU   #
 #----------# 
 
-    # START
-
-    print('Welcome to the Chilli-Game.')
-    print('') # empty line
-
-    print('To start game: Type START')
-    menuInput = input("")
-
+# RETURN TO MENU / is above actual start because this is called in the START section
+def restart():
+    print('To play again: Type START')
+    menuInput = input("")    
     if menuInput.upper() == "START":
         print('Do you wish to read the rules? YES/NO')
         menuInput = input("")
 
         if menuInput.upper() == "YES":      
             print("There is a basket full of items and a chilli. Your goal is to NOT be left with the chilli at the end. You can take 1, 2 or 3 items from the basket for each turn. So can your opponent. The one that is left with the chilli loses. ")
-        else:
+            restart()
+        elif menuInput.upper() == "NO":
             Start(choice,basket)
+        else:
+            print('Error: Unknown command. TRY AGAIN')
+            restart()
 
-    # RETURN TO MENU
+# START of game
 
-    # END
-    print("You lost")
+print("Welcome to the Chilli-Game.")
+Break()
+
+print("To start game: Type START")
+menuInput = input("")
+
+if menuInput.upper() == "START":
+    print('Do you wish to read the rules? YES/NO')
+    menuInput = input("")
+
+    if menuInput.upper() == "YES":      
+        print("There is a basket full of items and a chilli. Your goal is to NOT be left with the chilli at the end. You can take 1, 2 or 3 items from the basket for each turn. So can your opponent. The one that is left with the chilli loses. ")
+        Start(choice,basket)
+    elif menuInput.upper() == "NO":
+        Start(choice,basket)
+    else:
+        print('Error: Unknown command. TRY AGAIN')
+        restart()        
+    
+# END of game
+print("You have the chilli, and have lost the Chilli-Game")
+Break()
+restart()
 
 

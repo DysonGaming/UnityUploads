@@ -29,6 +29,27 @@ _obj attachTo[player,[0,5.5,0]];
 _objs = nearestObjects [player, [], 2];
 deleteVehicle _objs;
 
+if (playerSide isEqualTo west) {
+
+  player setObjectMaterialGlobal [0,"RR_Textures\rvmats\vehicles\bluechrome.rvmat"]; 
+
+};
+if (playerSide isEqualTo east) {
+
+  player setObjectMaterialGlobal [0,"RR_Textures\rvmats\vehicles\redchrome.rvmat"]; 
+
+};
+if (playerSide isEqualTo civilian) {
+
+  player setObjectMaterialGlobal [0,"RR_Textures\rvmats\vehicles\pinkchrome.rvmat"]; 
+
+};
+if (playerSide isEqualTo independent) {
+
+  player setObjectMaterialGlobal [0,"RR_Textures\rvmats\vehicles\greenchrome.rvmat"]; 
+
+};
+
 
 
 

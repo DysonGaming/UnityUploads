@@ -10,6 +10,7 @@
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link rel="icon" href="img/LIMBOicon.png">
     <script type="text/javascript" src="js/jul.js"></script>
+    <script type="text/javascript" src="js/game_button.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 
@@ -49,6 +50,8 @@
                 <br>
                 <a class="sidebar"  href="">Jack Sparrow</a>
                 <br>
+                <br>
+                <button id="ButtonGame" type="button">Open ChilliGame</button>
         </aside>
 
         <div id="contentTop">

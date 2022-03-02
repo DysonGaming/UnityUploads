@@ -8,7 +8,6 @@ window.onload=function() {
   var counterDIRTuborg = 1;
   var running = true;
   var visible = false;
-
   var button = document.getElementById('ButtonStop');
   var button2 = document.getElementById('ButtonStart');
   var buttonreset = document.getElementById('ButtonReset');

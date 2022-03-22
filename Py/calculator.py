@@ -1,22 +1,18 @@
-Nr1 = input('Choose your first number (i.e "0.25")')
-
+Nr1 = input('Choose your first number (i.e "0.25")') # choose 1st nr
 print("You have chosen " + Nr1)
-print("")
+print("") # break
 
-method = input('Choose your method (i.e "+,-,*,/,^,_")')
-
+method = input('Choose your method (i.e "+,-,*,/,^,_")') # choose operator
 print("You have chosen to " + method)
-print("")
+print("") # break
 
-Nr2 = input('Choose your first number (i.e "0.25")')
-
+Nr2 = input('Choose your first number (i.e "0.25")') # choose 2nd nr
 print("You have chosen " + Nr2)
-print("")
+print("") # break
 
 result = 0
 
-# Define methods
-
+# Define methods/operators
 def add ():
     result = int(Nr1) + int(Nr2)
     return result
@@ -45,8 +41,7 @@ def equation ():
     result = 1
     return result
 
-# Choose method
-
+# find method/operator & print result
 if method == "+":
     print("your result is " + str(add()))
 

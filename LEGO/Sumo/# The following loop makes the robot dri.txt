@@ -1,0 +1,18 @@
+# The following loop makes the robot drive forward until it detects an
+# obstacle. Then it backs up and turns around. It keeps on doing this
+# until you stop the program.
+while True:
+    # Begin driving forward at 200 millimeters per second.
+    robot.drive(200, 0)
+
+    # Wait until an obstacle is detected. This is done by repeatedly
+    # doing nothing (waiting for 10 milliseconds) while the measured
+    # distance is still greater than 300 mm.
+    while (obstacle_sensorRight.color() > 300) or (obstacle_sensorLeft.color() > 300):
+        wait(10)
+
+    # Drive backward for 300 millimeters.
+    robot.straight(-300)
+
+    # Turn around by 120 degrees
+    robot.turn(120)

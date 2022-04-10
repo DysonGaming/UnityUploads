@@ -26,8 +26,7 @@
     <br>
 
     <body>
-
-        <div id="wrapperGame">
+        <div id="wrapper">
 
             <aside>
                 <p style="font-weight:bold;" class="sidebar">Other Profiles:</p>
@@ -48,14 +47,11 @@
 
             </aside>
 
-            <div id="contentTopGame">
+            <div id="contentTop">
 
                 <?php
                     if (isset($_SESSION["useruid"])) {
-                        echo "<b>Hello " . $_SESSION["useruid"] . "</b>";
-
-                        echo "</br>";  
-                        
+                        echo "<p>Hello " . $_SESSION["useruid"] . "</p>";
                         echo "<a href='includes/logout.inc.php'>Log Out</a>";
                     }
                     else {
@@ -66,12 +62,12 @@
                 <br>
                 <br>
 
-                <canvas id="myCanvas" width="350" height="350" style="border:1px solid #000000;">
+                <canvas id="myCanvas" width="100" height="100" style="border:1px solid #000000;">
                 </canvas>
 
                 <br>
 
-                <button id="ButtonStart" type="button">Start Spil</button>
+                <button id="ButtonStart" type="button">Start Simulation</button>
 
                 <br>
                 <br>

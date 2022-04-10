@@ -7,7 +7,7 @@ Date of creation: 10-11-2021
 Github: KaspeDKK
 */
 
-#wrapper {
+#wrapperGame {
 	background-color: rgba(64, 64, 64, 1);
 	width: 1024px;
 	min-height: 700px;
@@ -25,14 +25,14 @@ header {
 
 aside{
 	background-color: rgba(161, 161, 161, 1);
-	width: 200px;
+	width: 180px;
 	height: 600px;
 	margin: 10px;
 	float: left;
-	
+	text-align: center;
 }
 
-#contentTop {
+#contentTopGame {
 	background-color: rgba(161, 161, 161, 1);
 	width: 700px;
 	height: 600px;

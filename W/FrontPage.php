@@ -37,21 +37,23 @@
 
         <aside>
             <p style="font-weight:bold;" class="sidebar">Other Profiles:</p>
-
-                <a class="sidebar"  href="">Luke Skywalker</a>
-                <br>
-                <a class="sidebar"  href="">Tony Stark</a>
-                <br>
-                <a class="sidebar"  href="">Peter Parker</a>
-                <br>
-                <a class="sidebar"  href="">Bruce Wayne</a>
-                <br>
-                <a class="sidebar"  href="">Clint Barton</a>
-                <br>
-                <a class="sidebar"  href="">Jack Sparrow</a>
-                <br>
-                <br>
-                <button id="ButtonGame" type="button">Open ChilliGame</button>
+            <a class="sidebar"  href="">Luke Skywalker</a>
+            <br>
+            <a class="sidebar"  href="">Tony Stark</a>
+            <br>
+            <a class="sidebar"  href="">Peter Parker</a>
+            <br>
+            <a class="sidebar"  href="">Bruce Wayne</a>
+            <br>
+            <a class="sidebar"  href="">Clint Barton</a>
+            <br>
+            <a class="sidebar"  href="">Jack Sparrow</a>
+            <br>
+            <br>
+            <button id="ButtonGame" type="button">Open ChilliGame</button>
+            <br>
+            <br>
+            <button id="ButtonCanon" type="button">Open CanonSim</button>
         </aside>
 
         <div id="contentTop">

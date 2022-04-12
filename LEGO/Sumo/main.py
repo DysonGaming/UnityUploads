@@ -20,6 +20,7 @@ ev3.speaker.beep()
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
 ARM_motor = Motor(Port.A)
+dipshit_motor = Motor(Port.D)
 
 # Initialize the Ultrasonic Sensor. It is used to detect
 # obstacles as the robot drives around.
@@ -43,17 +44,18 @@ while True:
         # Begin driving forward
         robot.drive(170,0)
         
-        if obstacle_sensor.distance() < 120: # Approx 12 cm
+        if obstacle_sensor.distance() < 200: # Approx 12 cm/2
 
-            while obstacle_sensor.distance() < 120: # Approx 12 cm
+            while obstacle_sensor.distance() < 200: # Approx 12 cm/2
                 # GO FUCKING CRAZY 
                 ev3.speaker.beep()
                 robot.drive(350,0)
 
-                if obstacle_sensor.distance() < 80: # Approx 8 cm
-                    ARM_motor.run_target(600,-105)
-                    wait(5)
-                    ARM_motor.run_target(600,0)
+                if obstacle_sensor.distance() < 200: # Approx 8 cm
+ 
+                    dipshit_motor.run_target(6000,360)
+                    wait(1)
+                    dipshit_motor.run_target(6000,0)
 
 
 

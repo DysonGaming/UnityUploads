@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+#wrapper {
+	background-color: rgb(129, 129, 129);
+	width: 1024px;
+	min-height: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#myCanvas {
+	background-color: rgb(255, 255, 255);	
+}
+
+button{
+	margin: 10px;
+}
+	
+

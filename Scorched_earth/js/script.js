@@ -44,7 +44,8 @@ window.onload=function(){
 	}
 
 	// Viser kanon når siden loades
-	Enemy.onload = function(){
+	Enemy.onload = function()
+	JSON{
 	
 		context.drawImage(Enemy,20,5 00);
 	}
